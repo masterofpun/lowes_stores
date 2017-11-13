@@ -19,7 +19,6 @@ print('done stores',done_stores)
 
 for state in states:
     state_list = req.get(base_url.format(state), headers=headers).text
-    print(state_list)
     state_list = state_list.split('store-locator-results-table',1)[1].split('<table',1)[0]
     for stores_data in state_list.split('<tr')[2:]:
         data = []
