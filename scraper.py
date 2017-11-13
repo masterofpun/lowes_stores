@@ -38,7 +38,10 @@ for state in states:
             data.append('')
         data.append(state)
         info = req.get(detail_url.format(store_number),headers=headers).text
-        info = info.split('StoreDetails',1)[1].split('</script>',1)[0]
+        try:
+            info = info.split('StoreDetails',1)[1].split('</script>',1)[0]
+        except:
+            print(info)
         data.append(info.split('ZIP:',1)[1].split(',',1)[0].replace("'",'').strip())
         data.append(info.split('lat:',1)[1].split(',',1)[0].strip())
         data.append(info.split('lng:',1)[1].split(',',1)[0].strip())
