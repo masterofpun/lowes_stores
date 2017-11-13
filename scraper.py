@@ -6,7 +6,7 @@ conn = sqlite3.connect(DB_FILE)
 c = conn.cursor()
 c.execute("CREATE TABLE IF NOT EXISTS data (no,name,address,phone,fax,state,zip,lat,lng)")
 
-headers = {'User-Agent':'Just a script gathering a list of stores, will poll once a day after an initial dump; contact at: reddit.com/u/hypd09', 'Accept-Encoding': 'gzip', 'Content-Encoding': 'gzip'}
+headers = {'User-Agent':'A script gathering a list of stores, will poll once a day after an initial dump; contact at: reddit.com/u/hypd09', 'Accept-Encoding': 'gzip', 'Content-Encoding': 'gzip'}
 req = requests.Session()
 detail_url = 'https://m.lowes.com/store/NC-Wilkesboro/{0}'
 base_url = 'http://lowes.know-where.com/lowes/cgi/region?country=US&region={0}&design=default&lang=en&option=&mapid=US'
